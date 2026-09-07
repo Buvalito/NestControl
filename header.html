@@ -17,7 +17,18 @@
           </button>
         </div>
 
-        <a href="#diensten">Diensten</a>
+        <div class="nav-item-dropdown">
+          <button class="nav-link-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+            Ongediertebestrijding
+            <svg class="dropdown-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="wespen.html">Wespen en hoornaars</a></li>
+            <li><a href="ratten.html">Ratten</a></li>
+            <li><a href="muizen.html">Muizen</a></li>
+            <li><a href="mollen.html">Mollen</a></li>
+          </ul>
+        </div>
         <a href="#prijzen">Prijzen</a>
         <a href="#shop">Webshop</a>
         <a href="#over">Over ons</a>
@@ -50,3 +61,30 @@
     </nav>
   </div>
 </header>
+
+<script>
+(function(){
+  var item = document.querySelector('.nav-item-dropdown');
+  if(!item) return;
+  var trigger = item.querySelector('.nav-link-trigger');
+
+  function setOpen(open){
+    item.classList.toggle('open', open);
+    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  trigger.addEventListener('click', function(e){
+    e.preventDefault();
+    setOpen(!item.classList.contains('open'));
+  });
+
+  document.addEventListener('click', function(e){
+    if(!item.contains(e.target)) setOpen(false);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') setOpen(false);
+  });
+})();
+</script>
+

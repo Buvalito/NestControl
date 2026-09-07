@@ -65,6 +65,61 @@ nav{display:flex;align-items:center;gap:36px;}
 }
 .nav-links > a:hover::after{width:100%;}
 
+/* --- Diensten dropdown --- */
+.nav-item-dropdown{ position:relative; }
+.nav-item-dropdown > .nav-link-trigger{
+  display:flex; align-items:center; gap:6px;
+  background:none; border:none; cursor:pointer;
+  font:inherit; padding:4px 0;
+  color: var(--grijs-tekst);
+  font-family:'Inter', sans-serif; font-weight:700;
+  transition:color 0.2s;
+}
+.nav-item-dropdown > .nav-link-trigger:hover{ color:var(--zwart); }
+.nav-item-dropdown .dropdown-caret{ transition:transform 0.2s ease; flex-shrink:0; }
+.nav-item-dropdown.open .dropdown-caret{ transform:rotate(180deg); }
+body.header-transparent header:not(.scrolled) .nav-item-dropdown > .nav-link-trigger{ color:#fff; }
+body.header-transparent header:not(.scrolled) .nav-item-dropdown > .nav-link-trigger:hover{ color:#fff; opacity:0.8; }
+
+.dropdown-menu{
+  list-style:none; margin:0; padding:8px;
+  position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%);
+  background:var(--wit); border:1px solid var(--grijs-lijn); border-radius:10px;
+  box-shadow:0 12px 32px rgba(0,0,0,.1);
+  min-width:220px;
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity .18s ease, transform .18s ease, visibility .18s;
+}
+.nav-item-dropdown:hover .dropdown-menu,
+.nav-item-dropdown.open .dropdown-menu{
+  opacity:1; visibility:visible; pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
+.dropdown-menu a{
+  display:block; padding:10px 14px; border-radius:6px;
+  font-size:14px; font-weight:600; color:var(--grijs-tekst);
+  transition:background .15s ease, color .15s ease;
+}
+.dropdown-menu a:hover{ background:var(--grijs-bg); color:var(--zwart); }
+.dropdown-menu a::after{ display:none; }
+
+@media(max-width:900px){
+  .nav-item-dropdown{ width:100%; }
+  .nav-item-dropdown > .nav-link-trigger{
+    width:100%; justify-content:space-between;
+    font-size:clamp(22px, 4.5vh, 28px); padding:clamp(6px, 1.5vh, 12px) 0;
+    color:var(--zwart);
+  }
+  .nav-item-dropdown .dropdown-caret{ width:20px; height:20px; }
+  .dropdown-menu{
+    position:static; transform:none; opacity:1; visibility:visible; pointer-events:auto;
+    display:none; box-shadow:none; border:none; background:transparent;
+    padding:0 0 0 16px; min-width:0; margin-top:-4px;
+  }
+  .nav-item-dropdown.open .dropdown-menu{ display:block; }
+  .dropdown-menu a{ font-size:17px; padding:10px 0; color:var(--grijs-tekst); }
+}
+
 .mobile-menu-extras { display: none; }
 .mobile-menu-header { display: none; }
 
