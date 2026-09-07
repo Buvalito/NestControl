@@ -127,8 +127,8 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     Promise.all([
-      loadPartial('site-header', 'header.html'),
-      loadPartial('site-footer', 'footer.html')
+      loadPartial('site-header', '/header.html'),
+      loadPartial('site-footer', '/footer.html')
     ]).then(() => {
       rewriteHashLinks(document);
       initSharedBehavior();
