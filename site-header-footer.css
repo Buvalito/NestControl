@@ -166,7 +166,7 @@ body.header-transparent header:not(.scrolled) .nav-item-dropdown > .nav-link-tri
 
   .nav-links {
     display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100dvh;
-    background: var(--wit); flex-direction: column; padding: 20px 24px 32px;
+    background: var(--wit); flex-direction: column; align-items: flex-start; padding: 20px 24px 32px;
     border-bottom: none; box-shadow: none; z-index: 100;
     overflow-y: auto; overscroll-behavior-y: contain;
   }
@@ -207,6 +207,13 @@ body.header-transparent header:not(.scrolled) .nav-item-dropdown > .nav-link-tri
   .btn-phone-trigger span::after { content: "Bel me"; font-size: 14px; }
 }
 
+@media(max-width: 560px) {
+  footer{ padding:48px 0 24px; }
+  .footer-top{ grid-template-columns:1fr; gap:32px; margin-bottom:40px; }
+  .footer-top p{ max-width:100%; }
+  .footer-bottom{ flex-direction:column; align-items:flex-start; gap:12px; }
+}
+
 @media(max-width: 374px) {
   .btn-phone-trigger { padding: 8px 12px; gap: 4px; }
   .logo img { min-width: 90px; }
@@ -222,3 +229,6 @@ footer{background:var(--zwart);color:#fff;padding:72px 0 32px;}
 .footer-col a{display:block;font-size:15px;color:#e5e6ea;margin-bottom:12px;font-weight:500; transition: color 0.2s;}
 .footer-col a:hover{color:var(--blauw);}
 .footer-bottom{ border-top:1px solid #232329;padding-top:28px; display:flex;justify-content:space-between;font-size:13px;color:#75787f;flex-wrap:wrap;gap:8px; }
+.footer-credit{ font-size:12px; color:#54565c; }
+.footer-credit a{ color:inherit; text-decoration:underline; text-underline-offset:2px; transition:color .2s; }
+.footer-credit a:hover{ color:#9599a3; }

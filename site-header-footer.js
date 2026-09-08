@@ -98,6 +98,29 @@
       );
     }
 
+    document
+      .querySelectorAll('.nav-item-dropdown > .nav-link-trigger')
+      .forEach(trigger => {
+
+        trigger.addEventListener('click', (e) => {
+
+          e.preventDefault();
+
+          const parent = trigger.closest('.nav-item-dropdown');
+          const wasOpen = parent.classList.contains('open');
+
+          document
+            .querySelectorAll('.nav-item-dropdown.open')
+            .forEach(el => {
+              if (el !== parent) el.classList.remove('open');
+            });
+
+          parent.classList.toggle('open', !wasOpen);
+
+        });
+
+      });
+
     if (burger && navLinks) {
 
       burger.addEventListener('click', () => {
