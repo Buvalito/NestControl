@@ -30,6 +30,27 @@ header .nav-links > a, header .logo { transition: color 0.3s ease; }
    pagina's met <body class="header-transparent"> (vb. homepage) */
 body.header-transparent header::before{ opacity:0; }
 body.header-transparent header.scrolled::before{ opacity:1; }
+
+/* --- FOOTER ---
+   LET OP: deze basisregels moeten VOOR alle @media-blocks staan.
+   Stonden ze erna (zoals voorheen), dan wonnen ze altijd van de
+   mobile-overrides verderop in dit bestand — zelfde specificiteit,
+   maar later in de bron = wint, media-conditie of niet. Daardoor
+   leek de footer niet responsive. */
+footer{background:var(--zwart);color:#fff;padding:72px 0 32px;}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:64px;}
+.footer-logo{ margin-bottom:16px; display: flex; align-items: center; }
+.footer-logo img { height: 32px; width: auto; min-width: 140px; object-fit: contain; }
+.footer-top p{color:#9599a3;font-size:15px;line-height:1.65;max-width:280px;}
+.footer-col h5{font-family:'Inter','Inter',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9599a3;margin-bottom:20px;}
+.footer-col a{display:block;font-size:15px;color:#e5e6ea;margin-bottom:12px;font-weight:500; transition: color 0.2s;}
+.footer-col a:hover{color:var(--blauw);}
+.footer-bottom{ border-top:1px solid #232329;padding-top:28px; display:flex;justify-content:space-between;align-items:flex-start;font-size:13px;color:#75787f;flex-wrap:wrap;gap:8px 24px; }
+.footer-bottom-left{ display:flex; flex-direction:column; gap:6px; }
+.footer-credit{ font-size:12px; color:#54565c; }
+.footer-credit a{ color:inherit; text-decoration:underline; text-underline-offset:2px; transition:color .2s; }
+.footer-credit a:hover{ color:#9599a3; }
+
 @media(min-width:901px){
   body.header-transparent header:not(.scrolled) .nav-links > a { color:#fff; }
   body.header-transparent header:not(.scrolled) .nav-links > a:hover { color:#fff; opacity:0.8; }
@@ -78,8 +99,14 @@ nav{display:flex;align-items:center;gap:36px;}
 .nav-item-dropdown > .nav-link-trigger:hover{ color:var(--zwart); }
 .nav-item-dropdown .dropdown-caret{ transition:transform 0.2s ease; flex-shrink:0; }
 .nav-item-dropdown.open .dropdown-caret{ transform:rotate(180deg); }
-body.header-transparent header:not(.scrolled) .nav-item-dropdown > .nav-link-trigger{ color:#fff; }
-body.header-transparent header:not(.scrolled) .nav-item-dropdown > .nav-link-trigger:hover{ color:#fff; opacity:0.8; }
+/* Enkel op desktop wit maken over de transparante hero — anders wint deze
+   regel (hogere specificiteit) altijd van de mobile-menu kleur-fix
+   hieronder, waardoor "Ongedierte" onzichtbaar wit werd in het mobiele
+   menu (witte tekst op witte achtergrond). */
+@media(min-width:901px){
+  body.header-transparent header:not(.scrolled) .nav-item-dropdown > .nav-link-trigger{ color:#fff; }
+  body.header-transparent header:not(.scrolled) .nav-item-dropdown > .nav-link-trigger:hover{ color:#fff; opacity:0.8; }
+}
 
 .dropdown-menu{
   position:absolute; top:100%; left:50%; transform:translateX(-50%);
@@ -219,16 +246,3 @@ body.header-transparent header:not(.scrolled) .nav-item-dropdown > .nav-link-tri
   .logo img { min-width: 90px; }
 }
 
-/* --- FOOTER --- */
-footer{background:var(--zwart);color:#fff;padding:72px 0 32px;}
-.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:64px;}
-.footer-logo{ margin-bottom:16px; display: flex; align-items: center; }
-.footer-logo img { height: 32px; width: auto; min-width: 140px; object-fit: contain; }
-.footer-top p{color:#9599a3;font-size:15px;line-height:1.65;max-width:280px;}
-.footer-col h5{font-family:'Inter','Inter',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9599a3;margin-bottom:20px;}
-.footer-col a{display:block;font-size:15px;color:#e5e6ea;margin-bottom:12px;font-weight:500; transition: color 0.2s;}
-.footer-col a:hover{color:var(--blauw);}
-.footer-bottom{ border-top:1px solid #232329;padding-top:28px; display:flex;justify-content:space-between;font-size:13px;color:#75787f;flex-wrap:wrap;gap:8px; }
-.footer-credit{ font-size:12px; color:#54565c; }
-.footer-credit a{ color:inherit; text-decoration:underline; text-underline-offset:2px; transition:color .2s; }
-.footer-credit a:hover{ color:#9599a3; }
