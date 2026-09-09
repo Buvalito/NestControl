@@ -268,6 +268,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .section-head h2{max-width:580px; margin-bottom:0;}
 .section-head p{max-width:400px; margin-bottom:0;}
 
+.section-tag{ display:inline-flex; align-items:center; gap:7px; font-family:'Inter',sans-serif; font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--oranje); margin-bottom:14px; }
+.section-tag svg{ flex-shrink:0; }
+
 .section-head.centered {
   flex-direction: column;
   align-items: center;
@@ -682,7 +685,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   <section class="section" id="diensten">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2>Jouw totaaloplossing voor ongediertebestrijding</h2>
+        <div>
+          <span class="section-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+            Diensten
+          </span>
+          <h2>Jouw totaaloplossing voor ongediertebestrijding</h2>
+        </div>
         <p>Van een dringende interventie tot preventief onderhoud: ik bied een totaaloplossing voor jouw woning, tuin of bedrijf.</p>
       </div>
       <div class="diensten-grid">
@@ -790,7 +799,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   <section class="section" id="prijzen">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2>Duidelijke en eerlijke prijzen zonder verrassingen</h2>
+        <div>
+          <span class="section-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            Prijzen
+          </span>
+          <h2>Duidelijke en eerlijke prijzen zonder verrassingen</h2>
+        </div>
         <p>Een richtprijs per type interventie. Na de inspectie ontvang je steeds een concrete bevestiging vooraf.</p>
       </div>
       <div class="prijzen-grid">
@@ -845,7 +860,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
         <div>
           <span class="shop-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            Webshop
+            Producten
           </span>
           <h2>Liever zelf aan de slag? Kies dan voor de juiste producten</h2>
         </div>
@@ -1016,6 +1031,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       </div>
       
       <div class="over-text reveal delay-200">
+        <span class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+          Over ons
+        </span>
         <h2>Met <span style="color:var(--oranje);">NestControl</span> kies je voor gemoedsrust.</h2>
         <p class="lead" style="color: var(--zwart); margin-bottom: 12px;">Snelle en efficiënte ongediertebestrijding in West-Vlaanderen, met een persoonlijke aanpak.</p>
         
