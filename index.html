@@ -108,8 +108,8 @@ h1, h2, h3, .disp, .contact-info-text .title, .trust-item b, .stat-item b {
   word-break: normal;
 }
 
-h1 { font-size: 44px; line-height: 1.15; margin-bottom: 24px; color: #fff; }
-h2 { font-size: 36px; line-height: 1.2; margin-bottom: 16px; }
+h1 { font-size: clamp(28px, 7vw, 44px); line-height: 1.15; margin-bottom: 24px; color: #fff; }
+h2 { font-size: clamp(24px, 5.5vw, 36px); line-height: 1.2; margin-bottom: 16px; }
 h3 { font-size: 20px; line-height: 1.35; margin-bottom: 12px; }
 
 p { font-size: 16px; line-height: 1.65; color: var(--grijs-tekst); margin-bottom: 16px; }
@@ -514,10 +514,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     background: linear-gradient(to bottom, rgba(10,10,12,0.85) 0%, rgba(10,10,12,0.7) 60%, rgba(10,10,12,0.3) 100%);
   }
   
-  /* Aangepaste schaal voor mobiele koppen */
-  h1 { font-size: 34px; line-height: 1.2; }
-  h2 { font-size: 28px; }
-  
   .finder { margin-top: -80px; }
   .finder-inner { padding: 32px 24px; }
 
@@ -557,12 +553,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 @media(max-width: 600px) {
   .usp-grid { grid-template-columns: 1fr; }
+
+  .stat-row{ gap:16px 24px; margin-top:28px; }
+  .stat-item{ font-size:12px; gap:10px; }
+  .stat-item svg{ width:20px; height:20px; }
+  .stat-item b{ font-size:18px; }
 }
 
 @media(max-width: 480px) {
   .contact-row-item { padding: 14px; }
   .werkwijze-grid{grid-template-columns:1fr;}
   .shop-grid{grid-template-columns:1fr;}
+
+  .stat-row{ gap:14px 20px; }
+  .stat-item{ font-size:11.5px; }
+  .stat-item b{ font-size:17px; }
 }
 </style>
 </head>
@@ -812,7 +817,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
         <div class="prijs-card reveal delay-100">
           <div class="prijs-naam">Wespennest</div>
-          <div class="prijs-bedrag">€60 <span>vanaf, incl. btw</span></div>
+          <div class="prijs-bedrag">€70 <span>vanaf, incl. btw</span></div>
           <div class="prijs-sub">Eén verwijdering, binnen of buiten</div>
           <ul class="prijs-lijst">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Interventie binnen 24-48u</li>
@@ -1035,7 +1040,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
           Over ons
         </span>
-        <h2>Met <span style="color:var(--oranje);">NestControl</span> kies je voor gemoedsrust.</h2>
+        <h2>Met <span style="color:var(--oranje);">NestControl</span> kies je voor gemoedsrust</h2>
         <p class="lead" style="color: var(--zwart); margin-bottom: 12px;">Snelle en efficiënte ongediertebestrijding in West-Vlaanderen, met een persoonlijke aanpak.</p>
         
         <p>Eén vaste vakman, rechtstreeks contact en een aanpak op maat. Van de eerste inspectie tot de laatste behandeling blijf je rechtstreeks in contact met dezelfde persoon. Zo weet je altijd wie je over de vloer krijgt en wat er precies gebeurt.</p>

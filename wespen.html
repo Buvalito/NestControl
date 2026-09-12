@@ -123,8 +123,8 @@ body{
 }
 
 h1, h2, h3, .disp, .stat-item b { font-family:'Inter',sans-serif; font-weight:700; letter-spacing:-0.01em; overflow-wrap:normal; word-break:normal; }
-h1 { font-size: 44px; line-height: 1.15; margin-bottom: 24px; color: #fff; }
-h2 { font-size: 34px; line-height: 1.2; margin-bottom: 16px; }
+h1 { font-size: clamp(28px, 7vw, 44px); line-height: 1.15; margin-bottom: 24px; color: #fff; }
+h2 { font-size: clamp(23px, 5.2vw, 34px); line-height: 1.2; margin-bottom: 16px; }
 h3 { font-size: 20px; line-height: 1.35; margin-bottom: 12px; }
 p { font-size: 16px; line-height: 1.65; color: var(--grijs-tekst); margin-bottom: 16px; }
 .lead { font-size: 18px; line-height: 1.6; color: var(--grijs-tekst); margin-bottom: 24px; font-weight: 500; }
@@ -333,7 +333,7 @@ a:focus-visible, button:focus-visible{ outline:3px solid var(--blauw); outline-o
 /* --- MOBILE --- */
 @media(max-width:900px){
   .wrap{ padding:0 24px; }
-  h1{ font-size:32px; }
+  /* h1 schaalt nu via clamp() in de basisregel */
   .section{ padding:60px 0; }
   .finder{ margin-top:-50px; }
   .finder-inner{ padding:28px 24px; }
