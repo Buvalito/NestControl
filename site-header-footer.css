@@ -227,7 +227,7 @@ nav{display:flex;align-items:center;gap:36px;}
 
 @media(max-width: 480px) {
   .logo img { max-height: 16px; }
-  .mobile-menu-logo img { height: 20px; }
+  .mobile-menu-logo img { height: 24px; }
   nav { gap: 12px; }
   .btn-phone-trigger span { font-size: 0; }
   .btn-phone-trigger span::after { content: "Bel me"; font-size: 14px; }
